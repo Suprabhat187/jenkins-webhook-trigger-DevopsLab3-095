@@ -13,6 +13,9 @@ pipeline {
             steps {
                 echo 'Running Python locally (no Docker)...'
                 bat '''
+                REM Add Python to PATH temporarily for Jenkins
+                set PATH=%PATH%;C:\\Users\\supi0\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\supi0\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\
+
                 python --version
                 pip install -r requirements.txt
                 python app.py
